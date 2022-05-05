@@ -38,10 +38,11 @@
 
                 <h1 class="border-bottom mx-5" style="color:white;"></h1>
                 <br>
-                <h4 class="ff" style="color: rgb(7, 85, 11);"><b>Makhawaarij</b></h4>
-                <p style="color: rgb(252, 24, 214);"> <b>Shaykh Abuu Ayman
-                        Al-Shiraaziy</b></p>
-                <h6 style="color:red">حفظه الله تعالى</h6>
+                @foreach ($broadcasts as $broadcast)
+                    <h4 class="ff" style="color: rgb(7, 56, 9);"><b>{{$broadcast->title}}</b></h4>
+                    <p style="color: rgb(54, 24, 252);"> <b>{{$broadcast->teacher}}</b></p>
+                    <h6 style="color:red">{{$broadcast->extra}}</h6>
+                @endforeach
                 <div style="padding-top: 20px;">
                     <audio controls autoplay>
                         <source src="http://stream.zeno.fm/0gpzrz1trfhvv">
