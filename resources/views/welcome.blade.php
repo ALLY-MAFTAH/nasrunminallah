@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('assets/images/nasrunminallah_logo.png') }}" rel="shortcut icon" />
-    {{-- <link rel="stylesheet" href="css/app.css" /> --}}
+    <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/mixed_style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
@@ -55,10 +55,10 @@
 
     <!--====== Javascripts & Jquery ======-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
-    <script src="{{ asset('js/jquery-2.1.4.min.js') }} "></script>
-    <script src="{{ asset('js/plugin.js') }} "></script>
-    <script src="{{ asset('js/init-round.js') }} "></script>
-    <script src="{{ asset('js/main.js') }} "></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/init-round.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
