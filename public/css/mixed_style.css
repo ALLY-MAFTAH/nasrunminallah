@@ -4,7 +4,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: #4c280c;
+    background: #ebd0bc;
 }
 #round {
     position: absolute;
@@ -29,16 +29,13 @@
 }
 
 .intro-inner .intro-content .profile-img {
-    width: 150px;
+    width: 170px;
     height: 150px;
     margin: 0 auto;
-    border-radius: 50%;
+    border-radius: 15%;
     overflow: hidden;
-    border: 10px solid #fff;
-    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.61);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.61);
+    box-shadow: 0 0 20px rgba(120, 65, 3, 0.61);
     position: relative;
-    z-index: 9;
 }
 
 .intro-inner .intro-content h3 {

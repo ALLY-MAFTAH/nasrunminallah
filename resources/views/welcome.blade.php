@@ -5,16 +5,16 @@
     <title>Masjid Nasrun Minallah | Live duruus</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('assets/images/nasrunminallah_logo.png') }}" rel="shortcut icon" />
+    <link href="assets/images/LOGO.jpg" rel="shortcut icon" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/mixed_style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
         integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
     <style>
-        .intro-inner{
-    font-family:'Times New Roman', Times, serif;
-}
+        .intro-inner {
+            font-family: 'Times New Roman', Times, serif;
+        }
 
     </style>
 </head>
@@ -30,10 +30,11 @@
                 <div id="round"></div>
                 <br>
                 <div class="profile-img">
-                    <img style="max-width: 100%;" src="{{ asset('assets/images/nasrunminallah_logo.png') }}" alt="">
+                    <img style="max-width: 100%;" src="{{ asset('assets/images/LOGO.jpg') }}" alt="">
+
                 </div>
                 <br>
-                <h2><span style="color:white;font-weight:bolder" class="element"></span></h2>
+                <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
 
                 <h1 class="border-bottom mx-5" style="color:white;"></h1>
                 <br>
@@ -41,11 +42,9 @@
                 <p style="color: rgb(252, 24, 214);"> <b>Shaykh Abuu Ayman
                         Al-Shiraaziy</b></p>
                 <h6 style="color:red">حفظه الله تعالى</h6>
-                {{-- <h4 style="color: rgb(233, 50, 18);">Dawrah Itaendelea Baada ya Alfajr In Shaa Allah.</h4> --}}
                 <div style="padding-top: 20px;">
                     <audio controls autoplay>
                         <source src="http://stream.zeno.fm/0gpzrz1trfhvv">
-                        {{-- <source src="http://173.255.234.155:8020/stream"> --}}
                     </audio>
                 </div>
                 <br>
