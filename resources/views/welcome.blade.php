@@ -31,15 +31,13 @@
                 <br>
                 <div class="profile-img">
                     <img style="max-width: 100%;" src="{{ asset('assets/images/LOGO.jpg') }}" alt="">
-
                 </div>
                 <br>
                 <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
-
                 <h1 class="border-bottom mx-5" style="color:white;"></h1>
-                <br>
                 @foreach ($broadcasts as $broadcast)
-                    <h4 class="ff" style="color: rgb(7, 56, 9);"><b>{{$broadcast->title}}</b></h4>
+                    <h6 class="" style="color: rgb(7, 6, 62);"><b>{{$broadcast->title}}</b></h6>
+                    <h4 class="" style="color: rgb(7, 56, 9);"><b>{{$broadcast->book}}</b></h4>
                     <p style="color: rgb(54, 24, 252);"> <b>{{$broadcast->teacher}}</b></p>
                     <h6 style="color:red">{{$broadcast->extra}}</h6>
                 @endforeach

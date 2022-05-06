@@ -18,7 +18,7 @@ class BroadcastController extends Controller
     public function create()
     {
         $attributes['title'] = "Darsa ya Tawhiyd (Baada ya Maghrib)";
-        $attributes['book'] = "كتاب التلوحيد";
+        $attributes['book'] = "كتاب التوحيد";
         $attributes['teacher'] = "Sheikh Abuu Ayman Al-Shiraaziy";
         $attributes['extra'] = "حفظه الله تعالى";
 

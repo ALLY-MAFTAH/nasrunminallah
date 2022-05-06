@@ -67,7 +67,7 @@ $(window).on('load', function() {
     	TYPED JS
     --------------------*/
     $(".element").typed({
-        strings: ["Masjid Nasrun Minallah", "Ubungo Kibangu","Dar es salaam", "Live Duruus", "Duruus za Ramadhani"],
+        strings: ["Masjid Nasrun Minallah", "Ubungo Kibangu","Dar es salaam", "Live Duruus"],
         typeSpeed: 10,
         loop: true,
         backDelay: 2000

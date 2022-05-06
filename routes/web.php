@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Broadcast;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $broadcasts = Broadcast::all();
+
+    return view('welcome', compact('broadcasts'));
 });
 
 Auth::routes();
