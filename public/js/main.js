@@ -1,6 +1,6 @@
 'use strict';
 
-$(window).on('load', function() {
+$(window).on('load', function () {
     /*------------------
     	Preloder
     --------------------*/
@@ -14,7 +14,7 @@ $(window).on('load', function() {
     var $container = $('.isotope_items');
     $container.isotope();
 
-    $('.portfolio-filter li').on("click", function() {
+    $('.portfolio-filter li').on("click", function () {
         $(".portfolio-filter li").removeClass("active");
         $(this).addClass("active");
         var selector = $(this).attr('data-filter');
@@ -32,14 +32,14 @@ $(window).on('load', function() {
 
 
 
-(function($) {
+(function ($) {
 
     /*------------------
   		HEADER
   	--------------------*/
     var navMenu = $('.menu-list')
     navMenu.onePageNav();
-    $(window).on('scroll resize', function(e) {
+    $(window).on('scroll resize', function (e) {
         if ($(this).scrollTop() > 70) {
             $('.header-section').addClass('sticky');
         } else {
@@ -48,13 +48,13 @@ $(window).on('load', function() {
         e.preventDefault();
     });
 
-    $('.responsive').on('click', function(event) {
+    $('.responsive').on('click', function (event) {
         $('.menu-list').slideToggle(400);
         $('.header-section').toggleClass('bgc');
         event.preventDefault();
     });
 
-    $('.menu-list li a').on('click', function(event) {
+    $('.menu-list li a').on('click', function (event) {
         if ($(window).width() < 768) {
             $('.menu-list').slideUp(400);
             $('.header-section').removeClass('bgc');
@@ -67,7 +67,7 @@ $(window).on('load', function() {
     	TYPED JS
     --------------------*/
     $(".element").typed({
-        strings: ["Masjid Nasrun Minallah", "Ubungo Kibangu","Dar es salaam", "Live Duruus"],
+        strings: ["Masjid Nasrun Minallah", "Ubungo Kibangu", "Dar es salaam - Tanzania", "Live Duruus"],
         typeSpeed: 10,
         loop: true,
         backDelay: 2000
@@ -87,7 +87,7 @@ $(window).on('load', function() {
     /*------------------
     	PROGRESS BAR
     --------------------*/
-    $('.progress-bar-style').each(function() {
+    $('.progress-bar-style').each(function () {
         var progress = $(this).data("progress");
         var prog_width = progress + '%';
         if (progress <= 100) {
@@ -120,9 +120,14 @@ $(window).on('load', function() {
     --------------------*/
     $('.work-item').magnificPopup({
         type: 'image',
-        gallery: { enabled: true },
+        gallery: {
+            enabled: true
+        },
         removalDelay: 400,
-        zoom: { enabled: true, duration: 300 }
+        zoom: {
+            enabled: true,
+            duration: 300
+        }
     });
 
 
@@ -135,7 +140,7 @@ $(window).on('load', function() {
     /*------------------
     	CONTACT FORM
     --------------------*/
-    $('#contact-form').on('submit', function() {
+    $('#contact-form').on('submit', function () {
         var send_btn = $('#send-form'),
             form = $(this),
             formdata = $(this).serialize(),
@@ -152,11 +157,11 @@ $(window).on('load', function() {
             url: $(form).attr('action'),
             type: 'POST',
             data: formdata,
-            success: function(text) {
+            success: function (text) {
                 if (text == "success") {
                     send_btn.addClass('done');
                     send_btn.text('Success');
-                    setTimeout(function() {
+                    setTimeout(function () {
                         reset_form();
                         send_btn.removeClass('done');
                         send_btn.text('Massage');
@@ -165,7 +170,7 @@ $(window).on('load', function() {
                     reset_form();
                     send_btn.addClass('error');
                     send_btn.text('Error');
-                    setTimeout(function() {
+                    setTimeout(function () {
                         send_btn.removeClass('error');
                         send_btn.text('Massage');
                     }, 5000);

@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h3 class="float-start" style="color:blue">Data za Darsa Iliyopo Live Now</h3>
+                        <h4 class="float-start" style="color:blue">Darsa Iliyopo Live Now</h4>
                         @if ($broadcast != null)
                             <div class="form-check form-switch float-end">
                                 <form id="toggle-status-form-{{ $broadcast->id }}" method="post"
@@ -35,32 +35,31 @@
                             <table class="table table-striped table-bordered table-hover">
                                 <tbody class="px-3 py-3">
                                     <tr>
-                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:20px;">
+                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
                                             <div class="col-4 border-right">Darsa ya Nini:</div>
                                             <div class="col-8">{{ $broadcast->title }}</div>
                                         </div>
                                         <hr>
-                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:20px;">
+                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
                                             <div class="col-4 border-right">Kitabu Gani:</div>
                                             <div class="col-8">{{ $broadcast->book }}</div>
                                         </div>
                                         <hr>
-                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:20px;">
+                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
                                             <div class="col-4 border-right">Msomeshaji Je:</div>
                                             <div class="col-8">{{ $broadcast->teacher }}</div>
                                         </div>
                                         <hr>
-                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:20px;">
+                                        <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
                                             <div class="col-4 border-right">Cha Ziada:</div>
                                             <div class="col-8">{{ $broadcast->extra }}</div>
                                         </div>
                                         <hr>
                                         <div class="text-center">
-                                            <a href="#" class="btn btn-primary btn-sm" bs-data-toggle="modal"
-                                                bs-data-target="#edit-broadcast-modal-{{ $broadcast->id }}">
+                                            <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
+                                                data-target="#edit-broadcast-modal-{{ $broadcast->id }}">
                                                 <i class="fas fa-edit"> Update</i></a>
-
-                                            <div class="modal fade text-left"
+                                            <div class="modal text-left"
                                                 id="edit-broadcast-modal-{{ $broadcast->id }}">
                                                 <div class="modal-dialog modal-md">
                                                     <div class="modal-content">
@@ -143,7 +142,7 @@
                                                                 <div class="form-group row mb-0">
                                                                     <div class="col-md-6 offset-md-4">
                                                                         <button type="submit"
-                                                                            class="btn btn-primary btn-sm">
+                                                                            class="btn btn-outline-primary btn-sm">
                                                                             Update
                                                                         </button>
                                                                     </div>
