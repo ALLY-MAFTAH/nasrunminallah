@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class BroadcastController extends Controller
 {
-
     public function index()
     {
         $broadcasts = Broadcast::all();
@@ -21,6 +20,7 @@ class BroadcastController extends Controller
         $attributes['book'] = "كتاب التوحيد";
         $attributes['teacher'] = "Sheikh Abuu Ayman Al-Shiraaziy";
         $attributes['extra'] = "حفظه الله تعالى";
+        $attributes['status'] = false;
 
         $broadcast = Broadcast::create($attributes);
 
@@ -38,6 +38,16 @@ class BroadcastController extends Controller
 
         $broadcast->update($attributes);
 
+        return back();
+    }
+
+    public function toggleStatus(Request $request, Broadcast $broadcast)
+    {
+        $attributes = $this->validate($request, [
+            'status' => ['required', 'boolean'],
+        ]);
+
+        $broadcast->update($attributes);
         return back();
     }
 }

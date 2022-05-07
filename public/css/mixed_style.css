@@ -1,11 +1,4 @@
-.intro-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: #ebd0bc;
-}
+
 #round {
     position: absolute;
     /* top: 0; */
@@ -15,7 +8,7 @@
 .intro-inner {
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 100%;
     left: 0;
     top: 0;
     z-index: 2;
@@ -44,3 +37,13 @@
     color: rgb(52, 14, 219);
     margin-top: 25px;
 }
+
+    .intro-inner .intro-content .questions {
+        width: 92%;
+        height: 180px;
+        margin: 0 auto;
+        border-radius: 7px;
+        overflow: visible;
+        box-shadow: 0 0 20px rgba(120, 65, 3, 0.61);
+        position: relative;
+    }

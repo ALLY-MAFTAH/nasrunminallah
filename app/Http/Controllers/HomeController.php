@@ -24,8 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $broadcasts = Broadcast::all();
-
-        return view('home', compact('broadcasts'));
+        $broadcast = Broadcast::first();
+        return view('home', compact('broadcast'));
     }
 }

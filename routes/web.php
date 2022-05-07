@@ -16,13 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $broadcasts = Broadcast::all();
-
-    return view('welcome', compact('broadcasts'));
+    $broadcast = Broadcast::first();
+    return view('welcome', compact('broadcast'));
 });
 
+Route::post('/add_question', [App\Http\Controllers\QuestionController::class, 'create'])->name('add_question');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/add_broadcast', [App\Http\Controllers\BroadcastController::class, 'create'])->name('add_broadcast');
 Route::put('/update_broadcast/{broadcast}', [App\Http\Controllers\BroadcastController::class, 'update'])->name('update_broadcast');
+Route::put('broadcasts/{broadcast}/status', [App\Http\Controllers\BroadcastController::class, 'toggleStatus'])->name('toggle_status');
+

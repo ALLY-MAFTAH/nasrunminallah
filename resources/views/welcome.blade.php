@@ -20,36 +20,58 @@
 </head>
 
 <body>
+    <div style="display: none">{{ $isLive = '' }}</div>
+
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    <section class="main" id="home">
-        <div class="intro-bg"></div>
-        <div class="intro-inner">
-            <div class="intro-content">
-                <div id="round"></div>
-                <br>
-                <div class="profile-img">
-                    <img style="max-width: 100%;" src="{{ asset('assets/images/LOGO.jpg') }}" alt="">
-                </div>
-                <br>
-                <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
-                <h1 class="border-bottom mx-5" style="color:white;"></h1>
-                @foreach ($broadcasts as $broadcast)
-                    <h6 class="" style="color: rgb(7, 6, 62);"><b>{{$broadcast->title}}</b></h6>
-                    <h4 class="" style="color: rgb(7, 56, 9);"><b>{{$broadcast->book}}</b></h4>
-                    <p style="color: rgb(54, 24, 252);"> <b>{{$broadcast->teacher}}</b></p>
-                    <h6 style="color:red">{{$broadcast->extra}}</h6>
-                @endforeach
-                <div style="padding-top: 20px;">
-                    <audio controls autoplay>
-                        <source src="http://stream.zeno.fm/0gpzrz1trfhvv">
-                    </audio>
-                </div>
-                <br>
+    <div class="intro-inner py-0" style=" background: #f6e0d0;">
+        <div class="intro-content">
+            <div id="round"></div>
+            <br>
+            <div class="profile-img">
+                <img style="max-width: 100%;" src="{{ asset('assets/images/LOGO.jpg') }}" alt="">
             </div>
+            <img src="{{ asset('assets/images/online.png') }}" width="300px" alt="">
+            <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
+            <h1 class="border-bottom mx-5" style="color:white;"></h1>
+                @if ($broadcast->status == true)
+                    <div style="display: none">{{ $isLive = 'NO' }}</div>
+                    <h6 class="" style="color: rgb(7, 6, 62);"><b>{{ $broadcast->title }}</b></h6>
+                    <h4 class="" style="color: rgb(7, 56, 9);"><b>{{ $broadcast->book }}</b></h4>
+                    <p style="color: rgb(54, 24, 252);"> <b>{{ $broadcast->teacher }}</b></p>
+                    <h6 style="color:red">{{ $broadcast->extra }}</h6>
+                @else
+                    <br>
+                    <h3 class="text-danger"><b>HATUPO LIVE MUDA HUU</b></h3>
+                    <br>
+                    <p>Endelea Kusikiliza Radio</p>
+                @endif
+            <div style="padding-top: 20px; padding-bottom:10px">
+                <audio controls autoplay>
+                    <source src="http://stream.zeno.fm/0gpzrz1trfhvv">
+                </audio>
+            </div>
+            @if ($isLive == 'YES')
+                <div class="container questions">
+                    <a style="color: black; font-size:13px"><i class="fas fa-edit"></i> Andika Hapa Kama Una
+                        Swali</a>
+                    <div class="card-body">
+                        <form action="{{ route('add_question') }}" method="post">
+                            @csrf
+                            <div class="form-gup">
+                                <textarea class="form-control" name="qn" rows="3" id="qn">
+                                </textarea>
+                            </div>
+                            <div class="form-group py-2">
+                                <button class="btn btn-sm btn-outline-success" type="submit">Tuma</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            @endif
         </div>
-    </section>
+    </div>
 
     <!--====== Javascripts & Jquery ======-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
@@ -57,6 +79,11 @@
     <script src="js/plugin.js"></script>
     <script src="js/init-round.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $('form').submit(function() {
+            $(this).find(':submit').attr('disabled', true);
+        });
+    </script>
 </body>
 
 </html>
