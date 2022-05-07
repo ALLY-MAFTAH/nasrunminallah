@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Broadcast;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class BroadcastController extends Controller
@@ -50,4 +51,5 @@ class BroadcastController extends Controller
         $broadcast->update($attributes);
         return back();
     }
+
 }

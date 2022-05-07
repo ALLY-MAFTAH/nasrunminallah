@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <script>
         $('form').submit(function(){
          $(this).find(':submit').attr( 'disabled',true );
