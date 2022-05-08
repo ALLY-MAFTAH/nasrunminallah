@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Broadcast;
+use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,11 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $broadcast = Broadcast::first();
-    return view('welcome', compact('broadcast'));
+    $questions = Question::all();
+
+    return view('welcome', compact('broadcast','questions'));
 });
 
 Route::post('/add_question', [App\Http\Controllers\QuestionController::class, 'create'])->name('add_question');
-Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -29,4 +31,5 @@ Route::post('/add_broadcast', [App\Http\Controllers\BroadcastController::class, 
 Route::put('/update_broadcast/{broadcast}', [App\Http\Controllers\BroadcastController::class, 'update'])->name('update_broadcast');
 Route::put('broadcasts/{broadcast}/status', [App\Http\Controllers\BroadcastController::class, 'toggleStatus'])->name('toggle_status');
 Route::get('/delete_question/{question}', [App\Http\Controllers\QuestionController::class, 'deleteQuestion'])->name('delete_question');
+Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
 

@@ -3,16 +3,17 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h3 class="" style="color:blue">Maswali Yaliyoulizwa</h3>
+                        <h3 class="" style="color:rgb(13, 13, 88)"><b>Maswali Yaliyoulizwa</b></h3>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-bordered table-hover table-responsive px-3 py-3">
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>Date</th>
                                     <th>Jina</th>
                                     <th>Swali</th>
                                     <th></th>
@@ -29,6 +30,7 @@
                                     @foreach ($questions as $index => $question)
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
+                                            <td>{{ $question->created_at }}</td>
                                             <td>{{ $question->name }}</td>
                                             <td>{{ $question->qn }}</td>
                                             <td>

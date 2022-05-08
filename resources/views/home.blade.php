@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h4 class="float-start" style="color:blue">Darsa Iliyopo Live Now</h4>
+                        <h4 class="float-start" style="color:rgb(5, 5, 103)"><b>Darsa Iliyopo Live Now</b></h4>
                         @if ($broadcast != null)
                             <div class="form-check form-switch float-end">
                                 <form id="toggle-status-form-{{ $broadcast->id }}" method="post"
@@ -33,39 +33,39 @@
                     @if ($broadcast != null)
                         <div class="card-body">
                             <table class="table table-striped table-bordered table-hover">
-                                <tbody class="px-3 py-3">
+                                <tbody class="px-3">
                                     <tr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Darsa ya Nini:</div>
+                                            <div class="col-4 border-right">Kichwa cha Habari:</div>
                                             <div class="col-8">{{ $broadcast->title }}</div>
                                         </div>
                                         <hr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Kitabu Gani:</div>
+                                            <div class="col-4 border-right">Kitabu / Mada:</div>
                                             <div class="col-8">{{ $broadcast->book }}</div>
                                         </div>
                                         <hr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Msomeshaji Je:</div>
+                                            <div class="col-4 border-right">Mwalimu:</div>
                                             <div class="col-8">{{ $broadcast->teacher }}</div>
                                         </div>
                                         <hr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Cha Ziada:</div>
+                                            <div class="col-4 border-right">Ziada:</div>
                                             <div class="col-8">{{ $broadcast->extra }}</div>
                                         </div>
                                         <hr>
                                         <div class="text-center">
-                                            <a href="#" class="btn btn-primary btn-sm" data-toggle="modal"
-                                                data-target="#edit-broadcast-modal-{{ $broadcast->id }}">
-                                                <i class="fas fa-edit"> Update</i></a>
-                                            <div class="modal text-left"
+                                            <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                                data-bs-target="#edit-broadcast-modal-{{ $broadcast->id }}">
+                                                <i class="fas fa-edit"> </i> Update</a>
+                                            <div class="modal fade text-left"
                                                 id="edit-broadcast-modal-{{ $broadcast->id }}">
                                                 <div class="modal-dialog modal-md">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title">Update Broadcast</h5>
-                                                            <button class="close" data-dismiss="modal">
+                                                            <button class="btn btn-outline-danger btn-sm close" data-bs-dismiss="modal">
                                                                 <span>&times;</span>
                                                             </button>
                                                         </div>
@@ -74,10 +74,10 @@
                                                                 action="{{ route('update_broadcast', $broadcast) }}">
                                                                 @csrf
                                                                 @method('PUT')
-                                                                <div class="form-group row">
+                                                                <div class="form-group py-2 row">
                                                                     <label for="title"
-                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Ttile') }}</label>
-                                                                    <div class="col-md-6">
+                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Kichwa cha Habari') }}</label>
+                                                                    <div class="col-md-8">
                                                                         <input id="title" type="text"
                                                                             class="form-control @error('title') is-invalid @enderror"
                                                                             name="title"
@@ -90,12 +90,12 @@
                                                                         @enderror
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group row">
+                                                                <div class="form-group py-2 row">
                                                                     <label for="book"
-                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Book') }}</label>
-                                                                    <div class="col-md-6">
+                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Kitabu/Mada') }}</label>
+                                                                    <div class="col-md-8 ">
                                                                         <input id="book" type="text"
-                                                                            class="form-control @error('book') is-invalid @enderror"
+                                                                            class=" form-control @error('book') is-invalid @enderror"
                                                                             name="book"
                                                                             value="{{ old('book', $broadcast->book) }}"
                                                                             required autocomplete="book" autofocus>
@@ -106,10 +106,10 @@
                                                                         @enderror
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group row">
+                                                                <div class="form-group py-2 row">
                                                                     <label for="teacher"
-                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Teacher') }}</label>
-                                                                    <div class="col-md-6">
+                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Mwalimu') }}</label>
+                                                                    <div class="col-md-8">
                                                                         <input id="teacher" type="text"
                                                                             class="form-control @error('teacher') is-invalid @enderror"
                                                                             name="teacher"
@@ -122,10 +122,10 @@
                                                                         @enderror
                                                                     </div>
                                                                 </div>
-                                                                <div class="form-group row">
+                                                                <div class="form-group py-2 row">
                                                                     <label for="extra"
-                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Extra') }}</label>
-                                                                    <div class="col-md-6">
+                                                                        class="col-md-4 col-form-label text-md-right">{{ __('Ziada') }}</label>
+                                                                    <div class="col-md-8">
                                                                         <input id="extra" type="text"
                                                                             class="form-control @error('extra') is-invalid @enderror"
                                                                             name="extra"
@@ -139,8 +139,8 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group row mb-0">
-                                                                    <div class="col-md-6 offset-md-4">
+                                                                <div class="form-group row my-2">
+                                                                    <div class="text-center">
                                                                         <button type="submit"
                                                                             class="btn btn-outline-primary btn-sm">
                                                                             Update
@@ -154,6 +154,7 @@
                                             </div>
                                         </div>
                                     </tr>
+                                        <a href="{{route('questions')}}" style="text-decoration: none; font-size:17px">Maswali</a>
                                 </tbody>
                             </table>
                         </div>
