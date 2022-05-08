@@ -39,8 +39,8 @@
                 <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
                 <h1 class="border-bottom mx-5" style="color:white;"></h1>
                 @if ($broadcast->status == true)
-                    <h4 class="" style="color: rgb(7, 6, 62);"><b>{{ $broadcast->title }}</b></h4>
-                    <h4 class="" style="color: rgb(7, 56, 9);"><b>{{ $broadcast->book }}</b></h4>
+                    <h5 class="" style="color: rgb(7, 6, 62);"><b>{{ $broadcast->title }}</b></h5>
+                    <h5 class="" style="color: rgb(7, 56, 9);"><b>{{ $broadcast->book }}</b></h5>
                     <p style="color: rgb(54, 24, 252);"> <b>{{ $broadcast->teacher }}</b></p>
                     <h6 style="color:red">{{ $broadcast->extra }}</h6>
                 @else
@@ -57,9 +57,7 @@
                 @if ($broadcast->status == true)
                     <div class="questions">
                         <div class="row pt-2">
-                            <div class="col-9 float-left"><a style="color: black; font-size:15px"><i
-                                        class="fas fa-edit"></i> Andika Hapa Kama Una
-                                    Swali</a></div>
+                            <div class="col-9 float-left"><a style="color: black; font-size:15px">Sehemu ya Maswali</a></div>
                             <div class="col-3 float-right">
                                 <div class="dropdown">
                                     <a class="" type="button" id="dropdownMenuButton1"
