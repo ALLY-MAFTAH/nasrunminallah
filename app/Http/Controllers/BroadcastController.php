@@ -32,8 +32,8 @@ class BroadcastController extends Controller
     {
         $attributes = $this->validate($request, [
             'title' => 'required',
-            'book' => 'required',
-            'teacher' => 'required',
+            // 'book' => 'required',
+            // 'teacher' => 'required',
             'extra' => 'required',
         ]);
 
@@ -52,4 +52,11 @@ class BroadcastController extends Controller
         return back();
     }
 
+    public function refresh()
+    {
+        $broadcast = Broadcast::first();
+        $questions = Question::all();
+
+        return back()->with(['broadcast'=>$broadcast, 'questions'=>$questions]);
+    }
 }

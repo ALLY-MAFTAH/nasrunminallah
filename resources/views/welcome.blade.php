@@ -32,23 +32,27 @@
             <div class="intro-content">
                 <div id="round"></div>
                 <br>
+                @include('components.fab')
                 <div class="profile-img">
                     <img style="max-width: 100%;" src="{{ asset('assets/images/LOGO.jpg') }}" alt="">
                 </div>
                 <img src="{{ asset('assets/images/online.png') }}" width="300px" alt="">
                 <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
                 <h1 class="border-bottom mx-5" style="color:white;"></h1>
-                @if ($broadcast->status == true)
-                    <h6 class="" style="color: rgb(7, 6, 62);"><b>{{ $broadcast->title }}</b></h6>
-                    <h6 class="" style="color: rgb(7, 56, 9);"><b>{{ $broadcast->book }}</b></h6>
-                    <p style="color: rgb(54, 24, 252);"> <b>{{ $broadcast->teacher }}</b></p>
-                    <h6 style="color:red">{{ $broadcast->extra }}</h6>
-                @else
-                    <br>
-                    <h3 class="text-danger"><b>HATUPO LIVE MUDA HUU</b></h3>
-                    <br>
-                    <p>Endelea Kusikiliza Radio</p>
-                @endif
+                <table id="info">
+                    @if ($broadcast->status == true)
+                        <h6 class="" style="color: rgb(7, 6, 62);"><b id="info1">{{ $broadcast->title }}</b>
+                        </h6>
+                        <h6 class="" style="color: rgb(7, 56, 9);"><b id="info2">{{ $broadcast->book }}</b></h6>
+                        <p style="color: rgb(54, 24, 252);"> <b id="info3">{{ $broadcast->teacher }}</b></p>
+                        <h6 id="info4" style="color:red">{{ $broadcast->extra }}</h6>
+                    @else
+                        <br>
+                        <h3 class="text-danger"><b id="info5">HATUPO LIVE MUDA HUU</b></h3>
+                        <br>
+                        <p id="info6">Endelea Kusikiliza Radio</p>
+                    @endif
+                </table>
                 <div style="padding-top: 20px; padding-bottom:10px">
                     <audio controls autoplay>
                         <source src="http://stream.zeno.fm/0gpzrz1trfhvv">
@@ -57,7 +61,8 @@
                 @if ($broadcast->status == true)
                     <div class="questions">
                         <div class="row pt-2 px-3">
-                            <div class="col-9 text-start"><a style="color: black; font-size:15px">Sehemu ya Maswali</a></div>
+                            <div class="col-9 text-start"><a style="color: black; font-size:15px">Sehemu ya Maswali</a>
+                            </div>
                             <div class="col-3 text-end">
                                 <div class="dropdown">
                                     <a class="" type="button" id="dropdownMenuButton1"
@@ -94,7 +99,7 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Maswali Yaliyoulizwa ({{$questions->count()}})</h5>
+                        <h5 class="modal-title">Maswali Yaliyoulizwa ({{ $questions->count() }})</h5>
                         <button class="btn btn-outline-danger close" data-bs-dismiss="modal">
                             <span>X</span>
                         </button>
@@ -103,7 +108,8 @@
                         <div class="">
                             @foreach ($questions as $question)
                                 <div style="color: rgb(6, 117, 17); font-weight:bold">{{ $question->name }}</div>
-                                <div style="font-size: 14px">{{ $question->qn }}</div><hr>
+                                <div style="font-size: 14px">{{ $question->qn }}</div>
+                                <hr>
                             @endforeach
                         </div>
                     </div>
@@ -120,6 +126,17 @@
             $('form').submit(function() {
                 $(this).find(':submit').attr('disabled', true);
             });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>
+            // refresh every 5 seconds
+            // setInterval(function() {
+            //         //     // alert("The last 25 entries in the feed have been loaded");
+            //         $.get("refresh  ", function(data, status) {
+            //             $("#info1").html(data);
+
+            //         });
+            // }, 60000);
         </script>
     </body>
 

@@ -82,7 +82,7 @@
                                                                             class="form-control @error('title') is-invalid @enderror"
                                                                             name="title"
                                                                             value="{{ old('title', $broadcast->title) }}"
-                                                                            required autocomplete="title" autofocus>
+                                                                            required autocomplete="name" autofocus>
                                                                         @error('title')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -98,7 +98,7 @@
                                                                             class=" form-control @error('book') is-invalid @enderror"
                                                                             name="book"
                                                                             value="{{ old('book', $broadcast->book) }}"
-                                                                            required autocomplete="book" autofocus>
+                                                                             autocomplete="book" autofocus>
                                                                         @error('book')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -114,7 +114,7 @@
                                                                             class="form-control @error('teacher') is-invalid @enderror"
                                                                             name="teacher"
                                                                             value="{{ old('teacher', $broadcast->teacher) }}"
-                                                                            required autocomplete="teacher" autofocus>
+                                                                             autocomplete="teacher" autofocus>
                                                                         @error('teacher')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
