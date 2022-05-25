@@ -32,8 +32,8 @@ class BroadcastController extends Controller
     {
         $attributes = $this->validate($request, [
             'title' => 'required',
-            // 'book' => 'required',
-            // 'teacher' => 'required',
+            'book' => 'required',
+            'teacher' => 'required',
             'extra' => 'required',
         ]);
 
