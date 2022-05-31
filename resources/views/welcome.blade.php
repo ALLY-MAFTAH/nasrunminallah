@@ -5,7 +5,7 @@
     <title>Masjid Nasrun Minallah | Live duruus</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/images/LOGO.jpg" rel="shortcut icon" />
+    <link href="assets/images/NEW LOGO.jpg" rel="shortcut icon" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/mixed_style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -34,7 +34,7 @@
                 <br>
                 @include('components.fab')
                 <div class="profile-img">
-                    <img style="max-width: 100%;" src="{{ asset('assets/images/LOGO.jpg') }}" alt="">
+                    <img style="max-width: 100%;" src="{{ asset('assets/images/NEW LOGO.jpg') }}" alt="">
                 </div>
                 <img src="{{ asset('assets/images/online.png') }}" width="300px" alt="">
                 <h2><span style="color:rgb(66, 39, 5);font-weight:bolder" class="element"></span></h2>
