@@ -6,13 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/images/NEW LOGO.jpg" rel="shortcut icon" />
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/app.css" type="text/css"/>
-    <link rel="stylesheet" href="css/mixed_style.css" type="text/css"/>
-=======
+
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
-    <link rel="stylesheet" href="{{assets('css/mixed_style.css')}}" />
->>>>>>> 8f26144a7ccee6caa4d36935a98b3c50b6a2c4c1
+    <link rel="stylesheet" href="{{asset('css/mixed_style.css')}}" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
