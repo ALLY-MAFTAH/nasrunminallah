@@ -12,7 +12,7 @@ class BroadcastController extends Controller
     {
         $broadcasts = Broadcast::all();
 
-        return view('welcome', compact('broadcasts'));
+        return view('radio', compact('broadcasts'));
     }
 
     public function create()

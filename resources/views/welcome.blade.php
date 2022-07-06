@@ -32,7 +32,6 @@
             <div class="intro-content">
                 <div id="round"></div>
                 <br>
-                @include('components.fab')
                 <div class="profile-img">
                     <img style="max-width: 100%;" src="{{ asset('assets/images/NEW LOGO.jpg') }}" alt="">
                 </div>
@@ -40,7 +39,7 @@
 
             </div>
         </div>
-       
+
         <!--====== Javascripts & Jquery ======-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
         <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
