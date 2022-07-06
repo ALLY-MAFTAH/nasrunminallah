@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class BroadcastController extends Controller
 {
-    public function index()
+    public function radio()
     {
         $broadcast = Broadcast::first();
         $questions = Question::all();

@@ -26,7 +26,7 @@ Route::post('/add_question', [App\Http\Controllers\QuestionController::class, 'c
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/radio', [App\Http\Controllers\BroadcastController::class, 'index'])->name('radio');
+Route::get('/radio', [App\Http\Controllers\BroadcastController::class, 'radio'])->name('radio');
 Route::post('/add_broadcast', [App\Http\Controllers\BroadcastController::class, 'create'])->name('add_broadcast');
 Route::put('/update_broadcast/{broadcast}', [App\Http\Controllers\BroadcastController::class, 'update'])->name('update_broadcast');
 Route::put('broadcasts/{broadcast}/status', [App\Http\Controllers\BroadcastController::class, 'toggleStatus'])->name('toggle_status');
