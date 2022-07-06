@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/images/NEW LOGO.jpg" rel="shortcut icon" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" href="css/mixed_style.css" />
+    <link rel="stylesheet" href="{{asset('css/app.css')}}" />
+    <link rel="stylesheet" href="{{assets('css/mixed_style.css')}}" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
@@ -18,7 +18,6 @@
         .intro-inner {
             font-family: 'Times New Roman', Times, serif;
         }
-
     </style>
 </head>
 
@@ -43,7 +42,8 @@
                     @if ($broadcast->status == true)
                         <h6 class="" style="color: rgb(7, 6, 62);"><b id="info1">{{ $broadcast->title }}</b>
                         </h6>
-                        <h6 class="" style="color: rgb(7, 56, 9);"><b id="info2">{{ $broadcast->book }}</b></h6>
+                        <h6 class="" style="color: rgb(7, 56, 9);"><b id="info2">{{ $broadcast->book }}</b>
+                        </h6>
                         <p style="color: rgb(54, 24, 252);"> <b id="info3">{{ $broadcast->teacher }}</b></p>
                         <h6 id="info4" style="color:red">{{ $broadcast->extra }}</h6>
                     @else
@@ -65,8 +65,8 @@
                             </div>
                             <div class="col-3 text-end">
                                 <div class="dropdown">
-                                    <a class="" type="button" id="dropdownMenuButton1"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
                                         <i style="color: black;font-size:15px" class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -118,10 +118,10 @@
         </div>
         <!--====== Javascripts & Jquery ======-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js">
-        <script src="js/jquery-2.1.4.min.js"></script>
-        <script src="js/plugin.js"></script>
-        <script src="js/init-round.js"></script>
-        <script src="js/main.js"></script>
+        <script src="{{asset('js/jquery-2.1.4.min.js')}}"></script>
+        <script src="{{asset('js/plugin.js')}}"></script>
+        <script src="{{asset('js/init-round.js')}}"></script>
+        <script src="{{asset('js/main.js')}}"></script>
         <script>
             $('form').submit(function() {
                 $(this).find(':submit').attr('disabled', true);
