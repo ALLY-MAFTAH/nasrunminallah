@@ -35,8 +35,11 @@
                 <div class="profile-img">
                     <img style="max-width: 100%;" src="{{ asset('assets/images/NEW LOGO.jpg') }}" alt="">
                 </div>
-                <img src="{{ asset('assets/images/online.png') }}" width="300px" alt="">
-
+<div class="pt-5">
+    <h2>
+        OFFICIAL WEBSITE
+    </h2>
+</div>
             </div>
         </div>
 

@@ -10,9 +10,10 @@ class BroadcastController extends Controller
 {
     public function index()
     {
-        $broadcasts = Broadcast::all();
+        $broadcast = Broadcast::first();
+        $questions = Question::all();
 
-        return view('radio', compact('broadcasts'));
+        return view('radio', compact('broadcast', 'questions'));
     }
 
     public function create()

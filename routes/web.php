@@ -17,10 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $broadcast = Broadcast::first();
-    $questions = Question::all();
 
-    return view('welcome', compact('broadcast', 'questions'));
+    return view('welcome');
 });
 Route::get('/refresh', [App\Http\Controllers\BroadcastController::class, 'refresh'])->name('refresh');
 
