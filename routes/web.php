@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    return view('welcome');
+    return view('home');
 });
 Route::get('/refresh', [App\Http\Controllers\BroadcastController::class, 'refresh'])->name('refresh');
 
 Route::post('/add_question', [App\Http\Controllers\QuestionController::class, 'create'])->name('add_question');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 Route::get('/radio', [App\Http\Controllers\BroadcastController::class, 'radio'])->name('radio');
 Route::post('/add_broadcast', [App\Http\Controllers\BroadcastController::class, 'create'])->name('add_broadcast');
 Route::put('/update_broadcast/{broadcast}', [App\Http\Controllers\BroadcastController::class, 'update'])->name('update_broadcast');

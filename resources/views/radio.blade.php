@@ -5,7 +5,7 @@
     <title>Masjid Nasrun Minallah | Live Radio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/images/NEW LOGO.jpg" rel="shortcut icon" />
+    <link href="{{asset('assets/images/NEW LOGO.jpg')}}" rel="shortcut icon" />
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
     <link rel="stylesheet" href="{{asset('css/mixed_style.css')}}" />
