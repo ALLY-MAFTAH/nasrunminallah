@@ -7,8 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Masjid Nasrun Minallah | Data</title>
+    <title>@yield('title') | {{ 'Masjid Nasrun Minallah' }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

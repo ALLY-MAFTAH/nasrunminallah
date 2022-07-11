@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    return view('home');
+    return view('index');
 });
 Route::get('/refresh', [App\Http\Controllers\BroadcastController::class, 'refresh'])->name('refresh');
 
