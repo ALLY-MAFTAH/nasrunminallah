@@ -42,4 +42,14 @@ class QuestionController extends Controller
         $question->delete();
         return back();
     }
+
+    // public function toggleQuestions(Request $request)
+    // {
+    //     $attributes = $this->validate($request, [
+    //         'status' => ['required', 'boolean'],
+    //     ]);
+
+    //     $broadcast->update($attributes);
+    //     return back();
+    // }
 }

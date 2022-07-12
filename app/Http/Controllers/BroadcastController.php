@@ -10,10 +10,25 @@ class BroadcastController extends Controller
 {
     public function radio()
     {
-        $broadcast = Broadcast::first();
         $questions = Question::all();
+        $broadcast = Broadcast::first();
 
-        return view('radio', compact('broadcast', 'questions'));
+        $status = $broadcast->status;
+        $title = $broadcast->title;
+        $book = $broadcast->book;
+        $teacher = $broadcast->teacher;
+        $extra = $broadcast->extra;
+
+        return view('radio')->with([
+            'status' => $status,
+            'title' => $title,
+            'book' => $book,
+            'teacher' => $teacher,
+            'extra' => $extra,
+            'questions' => $questions
+        ]);
+
+        // return view('radio', compact('broadcast', 'questions'));
     }
 
     public function create()
@@ -31,12 +46,12 @@ class BroadcastController extends Controller
 
     public function update(Request $request, Broadcast $broadcast)
     {
-        $attributes = $this->validate($request, [
-            'title' => 'required',
-            'book' => 'required',
-            'teacher' => 'required',
-            'extra' => 'required',
-        ]);
+        $attributes = [
+            'title' => $request->title ?? 'HATUPO LIVE MUDA HUU',
+            'book' => $request->book ?? '',
+            'teacher' => $request->teacher ?? 'Endelea Kusikiliza Redio',
+            'extra' => $request->extra ?? '',
+        ];
 
         $broadcast->update($attributes);
 
@@ -53,11 +68,36 @@ class BroadcastController extends Controller
         return back();
     }
 
-    public function refresh()
+
+    public function refreshStatus()
     {
         $broadcast = Broadcast::first();
-        $questions = Question::all();
-
-        return back()->with(['broadcast'=>$broadcast, 'questions'=>$questions]);
+        $status = $broadcast->status;
+        dd($status);
+        return $status;
+    }
+    public function refreshTitle()
+    {
+        $broadcast = Broadcast::first();
+        $title = $broadcast->title;
+        return $title;
+    }
+    public function refreshBook()
+    {
+        $broadcast = Broadcast::first();
+        $book = $broadcast->book;
+        return $book;
+    }
+    public function refreshTeacher()
+    {
+        $broadcast = Broadcast::first();
+        $teacher = $broadcast->teacher;
+        return $teacher;
+    }
+    public function refreshExtra()
+    {
+        $broadcast = Broadcast::first();
+        $extra = $broadcast->extra;
+        return $extra;
     }
 }

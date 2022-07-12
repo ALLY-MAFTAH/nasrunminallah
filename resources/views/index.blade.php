@@ -5,7 +5,7 @@
     <title>Masjid Nasrun Minallah</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{asset('assets/images/NEW LOGO.jpg')}}" rel="shortcut icon" />
+    <link href="{{ asset('assets/images/NEW LOGO.jpg') }}" rel="shortcut icon" />
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/mixed_style.css') }}" />
@@ -15,11 +15,14 @@
     </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
         integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+
+    
     <style>
         .intro-inner {
             font-family: 'Times New Roman', Times, serif;
         }
     </style>
+
 </head>
 
 <body>
@@ -39,6 +42,7 @@
                     <h2>
                         OFFICIAL WEBSITE
                     </h2>
+
                 </div>
             </div>
         </div>

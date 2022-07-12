@@ -14,8 +14,8 @@
                                     action="{{ route('toggle_status', $broadcast) }}">
                                     <input type="hidden" name="status" value="0"> <input class="form-check-input"
                                         type="checkbox" name="status" id="status-switch-{{ $broadcast->id }}"
-                                        broadcast="status-switch" @if ($broadcast->status) checked @endif value="1"
-                                        onclick="this.form.submit()">
+                                        broadcast="status-switch" @if ($broadcast->status) checked @endif
+                                        value="1" onclick="this.form.submit()">
                                     @csrf @method('put')
                                 </form>
                             </div>
@@ -66,7 +66,8 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title">Update Broadcast</h5>
-                                                            <button class="btn btn-outline-danger btn-sm close" data-bs-dismiss="modal">
+                                                            <button class="btn btn-outline-danger btn-sm close"
+                                                                data-bs-dismiss="modal">
                                                                 <span>&times;</span>
                                                             </button>
                                                         </div>
@@ -83,7 +84,7 @@
                                                                             class="form-control @error('title') is-invalid @enderror"
                                                                             name="title"
                                                                             value="{{ old('title', $broadcast->title) }}"
-                                                                            required autocomplete="name" autofocus>
+                                                                             autocomplete="name" autofocus>
                                                                         @error('title')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -99,7 +100,7 @@
                                                                             class=" form-control @error('book') is-invalid @enderror"
                                                                             name="book"
                                                                             value="{{ old('book', $broadcast->book) }}"
-                                                                             autocomplete="book" autofocus>
+                                                                            autocomplete="book" autofocus>
                                                                         @error('book')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -115,7 +116,7 @@
                                                                             class="form-control @error('teacher') is-invalid @enderror"
                                                                             name="teacher"
                                                                             value="{{ old('teacher', $broadcast->teacher) }}"
-                                                                             autocomplete="teacher" autofocus>
+                                                                            autocomplete="teacher" autofocus>
                                                                         @error('teacher')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -131,7 +132,7 @@
                                                                             class="form-control @error('extra') is-invalid @enderror"
                                                                             name="extra"
                                                                             value="{{ old('extra', $broadcast->extra) }}"
-                                                                            required autocomplete="extra" autofocus>
+                                                                             autocomplete="extra" autofocus>
                                                                         @error('extra')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -155,7 +156,25 @@
                                             </div>
                                         </div>
                                     </tr>
-                                        <a href="{{route('questions')}}" style="text-decoration: none; font-size:17px">Maswali</a>
+                                    <div class="row">
+                                        <div class="col"> <a href="{{ route('questions') }}"
+                                                style="text-decoration: none; font-size:17px">Maswali</a>
+                                        </div>
+                                        <div class="col">
+                                            {{-- <div class="form-check form-switch float-end">
+                                                <form id="toggle-status-form-{{ $broadcast->id }}" method="post"
+                                                    action="{{ route('toggle_status', $broadcast) }}">
+                                                    <input type="hidden" name="status" value="0"> <input
+                                                        class="form-check-input" type="checkbox" name="status"
+                                                        id="status-switch-{{ $broadcast->id }}"
+                                                        broadcast="status-switch"
+                                                        @if ($broadcast->status) checked @endif value="1"
+                                                        onclick="this.form.submit()">
+                                                    @csrf @method('put')
+                                                </form>
+                                            </div> --}}
+                                        </div>
+                                    </div>
                                 </tbody>
                             </table>
                         </div>

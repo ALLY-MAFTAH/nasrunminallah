@@ -20,7 +20,6 @@ Route::get('/', function () {
 
     return view('index');
 });
-Route::get('/refresh', [App\Http\Controllers\BroadcastController::class, 'refresh'])->name('refresh');
 
 Route::post('/add_question', [App\Http\Controllers\QuestionController::class, 'create'])->name('add_question');
 Auth::routes();
@@ -32,3 +31,10 @@ Route::put('/update_broadcast/{broadcast}', [App\Http\Controllers\BroadcastContr
 Route::put('broadcasts/{broadcast}/status', [App\Http\Controllers\BroadcastController::class, 'toggleStatus'])->name('toggle_status');
 Route::get('/delete_question/{question}', [App\Http\Controllers\QuestionController::class, 'deleteQuestion'])->name('delete_question');
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
+Route::put('questions/status', [App\Http\Controllers\BroadcastController::class, 'toggleQuestions'])->name('toggle_questions');
+
+Route::get('/refresh-status', [App\Http\Controllers\BroadcastController::class, 'refreshStatus'])->name('refresh-status');
+Route::get('/refresh-title', [App\Http\Controllers\BroadcastController::class, 'refreshTitle'])->name('refresh-title');
+Route::get('/refresh-book', [App\Http\Controllers\BroadcastController::class, 'refreshBook'])->name('refresh-book');
+Route::get('/refresh-teacher', [App\Http\Controllers\BroadcastController::class, 'refreshTeacher'])->name('refresh-teacher');
+Route::get('/refresh-extra', [App\Http\Controllers\BroadcastController::class, 'refreshExtra'])->name('refresh-extra');
