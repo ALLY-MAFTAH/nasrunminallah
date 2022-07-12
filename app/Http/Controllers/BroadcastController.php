@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Broadcast;
 use App\Models\Question;
+use GeneralSettings;
 use Illuminate\Http\Request;
 
 class BroadcastController extends Controller
 {
-    public function radio()
+    public function radio(GeneralSettings $settings)
     {
         $questions = Question::all();
         $broadcast = Broadcast::first();
@@ -25,7 +26,8 @@ class BroadcastController extends Controller
             'book' => $book,
             'teacher' => $teacher,
             'extra' => $extra,
-            'questions' => $questions
+            'questions' => $questions,
+            'settings' => $settings
         ]);
 
         // return view('radio', compact('broadcast', 'questions'));

@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header text-center">
                         <h4 class="float-start" style="color:rgb(5, 5, 103)"><b>Darsa Iliyopo Live Now</b></h4>
-                        @if ($broadcast != null)
+                        {{-- @if ($broadcast != null)
                             <div class="form-check form-switch float-end">
                                 <form id="toggle-status-form-{{ $broadcast->id }}" method="post"
                                     action="{{ route('toggle_status', $broadcast) }}">
@@ -19,7 +19,7 @@
                                     @csrf @method('put')
                                 </form>
                             </div>
-                        @endif
+                        @endif --}}
                     </div>
                     @if ($broadcast == null)
                         <div class="py-2 px-5">
@@ -157,22 +157,24 @@
                                         </div>
                                     </tr>
                                     <div class="row">
-                                        <div class="col"> <a href="{{ route('questions') }}"
+                                        <div class="col-md-4"> <a href="{{ route('questions') }}"
                                                 style="text-decoration: none; font-size:17px">Maswali</a>
                                         </div>
-                                        <div class="col">
-                                            {{-- <div class="form-check form-switch float-end">
-                                                <form id="toggle-status-form-{{ $broadcast->id }}" method="post"
-                                                    action="{{ route('toggle_status', $broadcast) }}">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <label for="status-switch">Ruhusu Maswali</label>
+                                            <div class="form-check form-switch float-end">
+                                                <form id="toggle-status-form" method="post"
+                                                    action="{{ route('toggle-questions') }}">
                                                     <input type="hidden" name="status" value="0"> <input
                                                         class="form-check-input" type="checkbox" name="status"
-                                                        id="status-switch-{{ $broadcast->id }}"
+                                                        id="status-switch"
                                                         broadcast="status-switch"
-                                                        @if ($broadcast->status) checked @endif value="1"
+                                                        @if ($settings->allow_questions) checked @endif value="1"
                                                         onclick="this.form.submit()">
                                                     @csrf @method('put')
                                                 </form>
-                                            </div> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </tbody>

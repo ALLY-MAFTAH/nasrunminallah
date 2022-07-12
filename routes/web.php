@@ -31,7 +31,7 @@ Route::put('/update_broadcast/{broadcast}', [App\Http\Controllers\BroadcastContr
 Route::put('broadcasts/{broadcast}/status', [App\Http\Controllers\BroadcastController::class, 'toggleStatus'])->name('toggle_status');
 Route::get('/delete_question/{question}', [App\Http\Controllers\QuestionController::class, 'deleteQuestion'])->name('delete_question');
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
-Route::put('questions/status', [App\Http\Controllers\BroadcastController::class, 'toggleQuestions'])->name('toggle_questions');
+Route::put('toggle-questions/status', [App\Http\Controllers\QuestionController::class, 'toggleQuestions'])->name('toggle-questions');
 
 Route::get('/refresh-status', [App\Http\Controllers\BroadcastController::class, 'refreshStatus'])->name('refresh-status');
 Route::get('/refresh-title', [App\Http\Controllers\BroadcastController::class, 'refreshTitle'])->name('refresh-title');

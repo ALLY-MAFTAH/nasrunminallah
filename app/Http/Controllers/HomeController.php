@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Broadcast;
 use App\Models\Question;
+use GeneralSettings;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,9 +24,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(GeneralSettings $settings)
     {
         $broadcast = Broadcast::first();
-        return view('dashboard', compact('broadcast'));
+
+        return view('dashboard', compact('broadcast','settings'));
     }
 }

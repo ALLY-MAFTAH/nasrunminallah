@@ -55,7 +55,7 @@
                         <source src="http://stream.zeno.fm/0gpzrz1trfhvv">
                     </audio>
                 </div>
-                {{-- @if ($allowQuestions == true) --}}
+                @if ($settings->allow_questions == true)
                 <div class="questions">
                     <div class="row pt-2 px-3">
                         <div class="col-9 text-start"><a style="color: black; font-size:15px">Sehemu ya
@@ -90,7 +90,7 @@
                         </form>
                     </div>
                 </div>
-                {{-- @endif --}}
+                @endif
             </div>
         </div>
         <div class="modal fade text-left" id="questionsModal">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use GeneralSettings;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -14,7 +15,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions=Question::all();
+        $questions = Question::all();
 
         return view('questions', compact('questions'));
     }
@@ -31,7 +32,7 @@ class QuestionController extends Controller
             'qn' => 'required',
         ]);
 
-        $question=Question::create($attributes);
+        $question = Question::create($attributes);
 
         return back();
     }
@@ -43,13 +44,13 @@ class QuestionController extends Controller
         return back();
     }
 
-    // public function toggleQuestions(Request $request)
-    // {
-    //     $attributes = $this->validate($request, [
-    //         'status' => ['required', 'boolean'],
-    //     ]);
+    public function toggleQuestions(GeneralSettings $settings, Request $request)
+    {
 
-    //     $broadcast->update($attributes);
-    //     return back();
-    // }
+        $settings->allow_questions = $request->boolean('status');
+
+        $settings->save();
+
+        return back();
+    }
 }
