@@ -7,19 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h4 class="float-start" style="color:rgb(5, 5, 103)"><b>Darsa Iliyopo Live Now</b></h4>
-                        {{-- @if ($broadcast != null)
-                            <div class="form-check form-switch float-end">
-                                <form id="toggle-status-form-{{ $broadcast->id }}" method="post"
-                                    action="{{ route('toggle_status', $broadcast) }}">
-                                    <input type="hidden" name="status" value="0"> <input class="form-check-input"
-                                        type="checkbox" name="status" id="status-switch-{{ $broadcast->id }}"
-                                        broadcast="status-switch" @if ($broadcast->status) checked @endif
-                                        value="1" onclick="this.form.submit()">
-                                    @csrf @method('put')
-                                </form>
-                            </div>
-                        @endif --}}
+                        <h4 class="float-center" style="color:rgb(5, 5, 103)"><b>DARSA ILIYOPO LIVE</b></h4>
                     </div>
                     @if ($broadcast == null)
                         <div class="py-2 px-5">
@@ -32,27 +20,27 @@
                         </div>
                     @endif
                     @if ($broadcast != null)
-                        <div class="card-body">
+                        <div class="card-body" style="background: rgb(243, 242, 246)">
                             <table class="table table-striped table-bordered table-hover">
                                 <tbody class="px-3">
                                     <tr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Kichwa cha Habari:</div>
+                                            <div class="col-4">Kichwa cha Habari:</div>
                                             <div class="col-8">{{ $broadcast->title }}</div>
                                         </div>
                                         <hr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Kitabu / Mada:</div>
+                                            <div class="col-4">Kitabu / Mada:</div>
                                             <div class="col-8">{{ $broadcast->book }}</div>
                                         </div>
                                         <hr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Mwalimu:</div>
+                                            <div class="col-4">Mwalimu:</div>
                                             <div class="col-8">{{ $broadcast->teacher }}</div>
                                         </div>
                                         <hr>
                                         <div class="row border-bottom-1" style="font-weight: bolder; font-size:15px;">
-                                            <div class="col-4 border-right">Ziada:</div>
+                                            <div class="col-4">Ziada:</div>
                                             <div class="col-8">{{ $broadcast->extra }}</div>
                                         </div>
                                         <hr>
@@ -84,7 +72,7 @@
                                                                             class="form-control @error('title') is-invalid @enderror"
                                                                             name="title"
                                                                             value="{{ old('title', $broadcast->title) }}"
-                                                                             autocomplete="name" autofocus>
+                                                                            autocomplete="name" autofocus>
                                                                         @error('title')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -132,7 +120,7 @@
                                                                             class="form-control @error('extra') is-invalid @enderror"
                                                                             name="extra"
                                                                             value="{{ old('extra', $broadcast->extra) }}"
-                                                                             autocomplete="extra" autofocus>
+                                                                            autocomplete="extra" autofocus>
                                                                         @error('extra')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
@@ -156,6 +144,7 @@
                                             </div>
                                         </div>
                                     </tr>
+                                    <hr>
                                     <div class="row">
                                         <div class="col-md-4"> <a href="{{ route('questions') }}"
                                                 style="text-decoration: none; font-size:17px">Maswali</a>
@@ -168,8 +157,7 @@
                                                     action="{{ route('toggle-questions') }}">
                                                     <input type="hidden" name="status" value="0"> <input
                                                         class="form-check-input" type="checkbox" name="status"
-                                                        id="status-switch"
-                                                        broadcast="status-switch"
+                                                        id="status-switch" broadcast="status-switch"
                                                         @if ($settings->allow_questions) checked @endif value="1"
                                                         onclick="this.form.submit()">
                                                     @csrf @method('put')
